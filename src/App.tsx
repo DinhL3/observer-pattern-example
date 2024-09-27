@@ -1,11 +1,15 @@
-import './App.css'
-import ParentComponent from './components/ParentComponent'
+import './App.css';
+import ButtonAppBar from './components/ButtonAppBar';
+import ParentComponent from './components/ParentComponent';
+import CounterContextProvider from './store/counter-context';
 
 function App() {
-
   return (
-    <ParentComponent/>
-  )
+    <CounterContextProvider>
+      <ButtonAppBar/>
+      <ParentComponent />
+    </CounterContextProvider>
+  );
 }
 
-export default App
+export default App;

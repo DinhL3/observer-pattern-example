@@ -1,13 +1,10 @@
-import { useState } from 'react';
+import { useContext } from 'react';
 import ChildComponent from './ChildComponent';
 import { Button, Container, Stack, Typography } from '@mui/material';
+import { CounterContext } from '../store/counter-context';
 
 export default function ParentComponent() {
-  const [count, setCount] = useState<number>(0);
-
-  const incrementCount = () => {
-    setCount(count + 1);
-  };
+  const counterCtx = useContext(CounterContext);
 
   return (
     <Container
@@ -35,13 +32,13 @@ export default function ParentComponent() {
           id="increment-button"
           variant="contained"
           color="primary"
-          onClick={incrementCount}
+          onClick={counterCtx.incrementCount}
         >
-          Increment count
+          Increment count using Context
         </Button>
-        <Typography variant="h6">Count: {count}</Typography>
+        <Typography variant="h6">Count from Context: {counterCtx.count}</Typography>
       </Stack>
-      <ChildComponent count={count} />
+      <ChildComponent/>
     </Container>
   );
 }

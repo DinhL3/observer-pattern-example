@@ -1,10 +1,12 @@
+import { useContext } from 'react';
+import { CounterContext } from '../store/counter-context';
+
+
 import { Box, Typography } from '@mui/material';
 
-interface ChildComponentProps {
-  count: number;
-}
+export default function ChildComponent() {
+  const counterCtx = useContext(CounterContext);
 
-export default function ChildComponent({ count }: ChildComponentProps) {
   return (
     <Box sx={{ p: 3, border: '2px solid blue', position: 'absolute', bottom: 1, right: 1 }}>
         <Typography
@@ -13,7 +15,7 @@ export default function ChildComponent({ count }: ChildComponentProps) {
       >
         Child component
       </Typography>
-      <Typography variant="h6">Count from parent: {count}</Typography>
+      <Typography variant="h6">Count from Context: {counterCtx.count}</Typography>
     </Box>
   );
 }
