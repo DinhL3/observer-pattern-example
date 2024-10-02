@@ -12,7 +12,7 @@ This simple app is demonstrates the difference between an adhoc solution of stat
 ## Adhoc solution
 * Run <code>git checkout tags/1.0-adhoc</code>
 * Open the web page on your browser, and click the button
-* The button, which is lcoated in ParentComponent, increment the 'count' state (also stored in Parent). This 'count' state is then passed to the ChildComponent to display again.
+* The button, which is located in ParentComponent, increment the 'count' state (also stored in Parent). This 'count' state is then passed to the ChildComponent to display again.
 * This solution is okay for this situation, but will become problematic if there were more nested child components, or if we wanted to use this 'count' value in different components not related to ParentComponent.
 
 ## Observer Pattern using Context API
