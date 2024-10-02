@@ -11,7 +11,6 @@ import { CounterContext } from '../store/counter-context';
 export default function ButtonAppBar() {
   const counterCtx = useContext(CounterContext);
 
-
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
@@ -22,6 +21,14 @@ export default function ButtonAppBar() {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Count from context: {counterCtx.count}
           </Typography>
+          <Button
+            id="increment-button"
+            variant="contained"
+            color="secondary"
+            onClick={counterCtx.incrementCount}
+          >
+            Increment count using Context
+          </Button>
         </Toolbar>
       </AppBar>
     </Box>
