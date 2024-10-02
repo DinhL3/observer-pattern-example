@@ -1,7 +1,5 @@
 import { useContext } from 'react';
 import { CounterContext } from '../store/counter-context';
-
-
 import { Box, Typography } from '@mui/material';
 
 export default function ChildComponent() {
